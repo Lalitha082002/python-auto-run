@@ -1,0 +1,17 @@
+name: Push Trigger Workflow
+
+on:
+  push:             # This triggers the workflow on every code push
+    branches:
+      - main        # Or use 'master' if that’s your default branch
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Show push message
+        run: echo "Code was pushed! This is the GitHub Actions workflow running on push."
